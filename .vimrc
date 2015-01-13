@@ -39,7 +39,7 @@ vnoremap < <gv
 vnoremap > >gv
 
 " insert newline without entering input mode
-nnoremap <C-J> a<CR><Esc>k$
+nnoremap <leader>j a<CR><Esc>k$
 
 " autocompetion
 inoremap <leader>, <C-x><C-o>
