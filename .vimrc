@@ -98,6 +98,8 @@ let g:pymode_syntax=1
 let g:pymode_syntax_all=1
 let g:pymode_lint_sort=['E', 'I', 'C']
 let g:pymode_virtualenv=1
+let g:pymode_breakpoint_cmd='import ipdb; ipdb.set_trace()  # XXX BREAKPOINT'
+
 
 " OmniPopup
 set completeopt=longest,menuone
