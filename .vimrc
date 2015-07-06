@@ -12,6 +12,7 @@ Bundle 'bling/vim-airline'
 Bundle 'tomasr/molokai'
 " Plugin 'JarrodCTaylor/vim-python-test-runner'
 Plugin 'tpope/vim-fugitive'
+Plugin 'taglist.vim' "depends on 'exuberant-ctags'
 
 "~~~~~~~~~~ Key bindings ~~~~~~~~~~"
 let mapleader=","
