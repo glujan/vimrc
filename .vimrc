@@ -100,7 +100,7 @@ let g:pymode_syntax_all=1
 let g:pymode_lint_sort=['E', 'I', 'C']
 let g:pymode_virtualenv=1
 let g:pymode_breakpoint_cmd='import pudb; pudb.set_trace()  # XXX BREAKPOINT'
-
+let g:pymode_options_max_line_length=120
 
 " OmniPopup
 set completeopt=longest,menuone
