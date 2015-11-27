@@ -7,6 +7,7 @@ Keep in mind that I use it (mostly) for editing Python files.
 Requirements
 ------------
 - _Vim_ 7.3+ with Python support (check the latter with `vim --version | grep python`)
+- `exuberant-ctags` system package for `taglist.vim` plugin
 
 Usage
 -----
