@@ -145,6 +145,7 @@ set number
 set textwidth=79
 set nowrap
 set fo-=t "don't automatically wrap text when typing
+set winwidth=60
 
 " tab to 4 spaces
 set tabstop=4
