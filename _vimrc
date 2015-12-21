@@ -54,6 +54,10 @@ if $COLORTERM == 'gnome-terminal'
 	set t_Co=256
 endif
 
+" color 80th and 120+ rows
+highlight ColorColumn ctermbg=235 guibg=#2c2d27
+let &colorcolumn="80,".join(range(120,999),",")
+
 "~~~~~~~~~~ Plugins config ~~~~~~~~~~"
 
 " airline
@@ -141,8 +145,6 @@ set number
 set textwidth=79
 set nowrap
 set fo-=t "don't automatically wrap text when typing
-highlight ColorColumn ctermbg=235 guibg=#2c2d27
-let &colorcolumn="80,".join(range(120,999),",")
 
 " tab to 4 spaces
 set tabstop=4
