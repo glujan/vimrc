@@ -129,6 +129,7 @@ set clipboard=unnamed
 
 " filertype recognition, highlight syntax
 filetype plugin indent on
+set ff=unix
 syntax on
 
 " mouse
