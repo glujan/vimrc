@@ -128,10 +128,6 @@ inoremap <silent><C-k> <C-R>=OmniPopup('k')<CR>
 " automatically reload .vimrc
 autocmd! bufwritepost .vimrc source %
 
-" better copying / pasting
-set pastetoggle=<F2>
-set clipboard=unnamed
-
 " filertype recognition, highlight syntax
 filetype plugin indent on
 set ff=unix
