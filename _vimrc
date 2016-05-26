@@ -1,19 +1,18 @@
 set nocompatible
 filetype off
-set rtp+=~/.vim/bundle/vundle
-call vundle#rc()
 
-Bundle 'gmarik/vundle'
-Bundle 'klen/python-mode'
-Bundle 'airblade/vim-gitgutter'
-Bundle 'kien/ctrlp.vim'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'bling/vim-airline'
-Bundle 'tomasr/molokai'
-" Plugin 'JarrodCTaylor/vim-python-test-runner'
-Plugin 'tpope/vim-fugitive'
-Plugin 'taglist.vim' "depends on 'exuberant-ctags'
-Plugin 'fatih/vim-go'
+call plug#begin()
+Plug 'klen/python-mode'
+Plug 'airblade/vim-gitgutter'
+Plug 'kien/ctrlp.vim'
+Plug 'scrooloose/nerdcommenter'
+Plug 'bling/vim-airline'
+Plug 'tomasr/molokai'
+" Plug 'JarrodCTaylor/vim-python-test-runner'
+Plug 'tpope/vim-fugitive'
+Plug 'taglist.vim' "depends on 'exuberant-ctags'
+Plug 'fatih/vim-go'
+call plug#end()
 
 "~~~~~~~~~~ Key bindings ~~~~~~~~~~"
 let mapleader=","
