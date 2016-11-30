@@ -24,10 +24,3 @@ Usage
 - `vim +PlugUpdate`
 
 To see how to manage plugins please refer to the [vim-plug wiki](https://github.com/junegunn/vim-plug/wiki).
-
-
-Future
-------
-
-In a foreseeable future I would like to use _Vim_ also for editing JavaScript, CSS and HTML files. For now I am stuck 
-with _Adobe Brackets_ ( :heart: ) for that.
