@@ -93,10 +93,12 @@ let g:ctrlp_max_height=15
 let g:ctrlp_custom_ignore='\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_open_multiple_files='t'
 set wildignore+=*.pyc
+set wildignore+=*__pycache__/*
 set wildignore+=*build/*
 set wildignore+=*dist/*
 set wildignore+=*.egg-info/*
 set wildignore+=*/coverage/*
+set wildignore+=*/vendor/*
 
 " python-mode
 let g:pymode_rope=1
