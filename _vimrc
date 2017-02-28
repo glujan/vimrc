@@ -2,16 +2,20 @@ set nocompatible
 filetype off
 
 call plug#begin()
-Plug 'klen/python-mode'
-Plug 'airblade/vim-gitgutter'
-Plug 'kien/ctrlp.vim'
-Plug 'scrooloose/nerdcommenter'
-Plug 'bling/vim-airline'
+" UI
 Plug 'tomasr/molokai'
-" Plug 'JarrodCTaylor/vim-python-test-runner'
+Plug 'airblade/vim-gitgutter'
+Plug 'vim-airline/vim-airline'
+
+" Langs
+Plug 'python-mode/python-mode'
+Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+
+" Tools
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-fugitive'
 Plug 'taglist.vim' "depends on 'exuberant-ctags'
-Plug 'fatih/vim-go'
 call plug#end()
 
 "~~~~~~~~~~ Key bindings ~~~~~~~~~~"
