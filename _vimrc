@@ -13,6 +13,7 @@ Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 
 " Tools
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'lokikl/vim-ctrlp-ag'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-fugitive'
 Plug 'taglist.vim' "depends on 'exuberant-ctags'
@@ -99,6 +100,10 @@ set wildignore+=*dist/*
 set wildignore+=*.egg-info/*
 set wildignore+=*/coverage/*
 set wildignore+=*/vendor/*
+
+" ctrlp-ag
+nnoremap <c-f> :CtrlPag<cr>
+vnoremap <c-f> :CtrlPagVisual<cr>
 
 " python-mode
 let g:pymode_rope=1
