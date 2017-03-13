@@ -91,7 +91,7 @@ let NERDSpaceDelims=1
 
 " ctrlp
 let g:ctrlp_max_height=15
-let g:ctrlp_custom_ignore='\v[\/]\.(git|hg|svn)$'
+let g:ctrlp_custom_ignore='node_modules\|\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_open_multiple_files='t'
 set wildignore+=*.pyc
 set wildignore+=*__pycache__/*
