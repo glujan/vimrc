@@ -16,7 +16,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'lokikl/vim-ctrlp-ag'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-fugitive'
-Plug 'taglist.vim' "depends on 'exuberant-ctags'
+Plug 'majutsushi/tagbar' "depends on 'exuberant-ctags'
 call plug#end()
 
 "~~~~~~~~~~ Key bindings ~~~~~~~~~~"
