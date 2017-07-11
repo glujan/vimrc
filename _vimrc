@@ -16,6 +16,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'lokikl/vim-ctrlp-ag'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb' "Gbrowse
 Plug 'majutsushi/tagbar' "depends on 'exuberant-ctags'
 call plug#end()
 
