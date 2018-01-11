@@ -62,7 +62,7 @@ endif
 
 " color 80th and 120+ rows
 highlight ColorColumn ctermbg=235 guibg=#2c2d27
-let &colorcolumn="80,".join(range(120,999),",")
+let &colorcolumn="80,".join(range(100,999),",")
 
 "~~~~~~~~~~ Plugins config ~~~~~~~~~~"
 
@@ -92,7 +92,7 @@ let NERDSpaceDelims=1
 
 " ctrlp
 let g:ctrlp_max_height=15
-let g:ctrlp_custom_ignore='node_modules\|\v[\/]\.(git|hg|svn)$'
+let g:ctrlp_custom_ignore='node_modules\|\v[\/]\.(git|hg|svn|tox)$'
 let g:ctrlp_open_multiple_files='t'
 set wildignore+=*.pyc
 set wildignore+=*__pycache__/*
@@ -107,6 +107,7 @@ nnoremap <c-f> :CtrlPag<cr>
 vnoremap <c-f> :CtrlPagVisual<cr>
 
 " python-mode
+let g:pymode_python = 'python3'
 let g:pymode_rope=1
 let g:pymode_rope_goto_definition_bind='<Leader>g'
 let g:pymode_rope_goto_definition_cmd="vnew"
