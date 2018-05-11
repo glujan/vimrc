@@ -48,17 +48,14 @@ vnoremap > >gv
 " insert newline without entering input mode
 nnoremap <leader>j a<CR><Esc>k$
 
-" autocompetion
+" auto completion
 inoremap <leader>, <C-x><C-o>
 
 "~~~~~~~~~~ View config ~~~~~~~~~~"
 
 " molokai theme
 colorscheme molokai
-
-if $COLORTERM == 'gnome-terminal'
-	set t_Co=256
-endif
+set termguicolors
 
 " color 80th and 120+ rows
 highlight ColorColumn ctermbg=235 guibg=#2c2d27
@@ -140,10 +137,11 @@ inoremap <silent><C-k> <C-R>=OmniPopup('k')<CR>
 " automatically reload .vimrc
 autocmd! bufwritepost .vimrc source %
 
-" filertype recognition, highlight syntax
+" filetype recognition, highlight syntax, spell check
 filetype plugin indent on
 set ff=unix
 syntax on
+set spell
 
 " mouse
 set bs=2
@@ -175,7 +173,7 @@ set nobackup
 set nowritebackup
 set noswapfile
 
-" enable CSS autocompletion automatically
+" enable CSS auto completion automatically
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 
 " encoding
