@@ -8,10 +8,11 @@ Plug 'airblade/vim-gitgutter'
 Plug 'vim-airline/vim-airline'
 
 " Langs
-Plug 'python-mode/python-mode'
+Plug 'python-mode/python-mode', {'for': 'python'}
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 
 " Tools
+Plug 'ambv/black', {'for': 'python'}
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'lokikl/vim-ctrlp-ag'
 Plug 'scrooloose/nerdcommenter'
@@ -114,7 +115,15 @@ let g:pymode_syntax_all=1
 let g:pymode_lint_sort=['E', 'I', 'C']
 let g:pymode_virtualenv=1
 let g:pymode_breakpoint_cmd='import pudb; pudb.set_trace()  # XXX BREAKPOINT'
-let g:pymode_options_max_line_length=120
+let g:pymode_options_max_line_length=100
+
+" NeoVim
+let g:python3_host_prog = '/home/grzegorz/.pyenv/versions/3.6.1/envs/neovim/bin/python'
+let g:python_host_prog = '/home/grzegorz/.pyenv/versions/2.7.12/envs/neovim-py2/bin/python'
+
+" Black
+let g:black_virtualenv = '/home/grzegorz/.pyenv/versions/3.6.1/envs/black/'
+let g:black_linelength = 100
 
 " OmniPopup
 set completeopt=longest,menuone
