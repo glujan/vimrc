@@ -8,8 +8,8 @@ Plug 'airblade/vim-gitgutter'
 Plug 'vim-airline/vim-airline'
 
 " Langs
-Plug 'python-mode/python-mode', {'for': 'python'}
-Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+Plug 'python-mode/python-mode', {'for': 'python', 'branch': 'develop'}
+Plug 'fatih/vim-go', {'for': 'go', 'do': ':GoInstallBinaries'}
 
 " Tools
 Plug 'ambv/black', {'for': 'python'}
@@ -123,7 +123,9 @@ let g:python_host_prog = '/home/grzegorz/.pyenv/versions/2.7.12/envs/neovim-py2/
 
 " Black
 let g:black_virtualenv = '/home/grzegorz/.pyenv/versions/3.6.1/envs/black/'
-let g:black_linelength = 100
+let g:black_linelength = 99
+" automatically run Black on save
+autocmd BufWritePre *.py execute ':Black'
 
 " OmniPopup
 set completeopt=longest,menuone
