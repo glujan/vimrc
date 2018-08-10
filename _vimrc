@@ -118,11 +118,11 @@ let g:pymode_breakpoint_cmd='import pudb; pudb.set_trace()  # XXX BREAKPOINT'
 let g:pymode_options_max_line_length=100
 
 " NeoVim
-let g:python3_host_prog = '/home/grzegorz/.pyenv/versions/3.6.1/envs/neovim/bin/python'
-let g:python_host_prog = '/home/grzegorz/.pyenv/versions/2.7.12/envs/neovim-py2/bin/python'
+let g:python3_host_prog = '~/.pyenv/versions/neovim/bin/python'
+let g:python_host_prog = '~/.pyenv/versions/neovim-py2/bin/python'
 
 " Black
-let g:black_virtualenv = '/home/grzegorz/.pyenv/versions/3.6.1/envs/black/'
+let g:black_virtualenv = '~/.pyenv/versions/black/'
 let g:black_linelength = 99
 " automatically run Black on save
 autocmd BufWritePre *.py execute ':Black'
