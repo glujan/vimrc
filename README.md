@@ -1,7 +1,7 @@
 .vimrc
 =====
 
-Feel [free to use it](LICENSE) and [suggest](https://github.com/glujan/vimrc/issues/new) me some improvements if any. 
+Feel [free to use it](LICENSE) and suggest improvements via Issues.
 Keep in mind that I use it (mostly) for editing Python files.
 
 Requirements
@@ -9,6 +9,9 @@ Requirements
 - _Vim_ 7.3+ with Python support (check the latter with `vim --version | grep +python`)
 - `exuberant-ctags` system package for `taglist.vim` plugin
 - _Vim_ with `clipboard` support is recommended (_vim-gnome_ package in Debian)
+- create virtualenvs for [Black](https://github.com/ambv/black) and (optionally) Neovim - see
+  `" Black` and `" NeoVim` in [\_vimrc](_vimrc) for specific locations
+
 
 Usage
 -----
