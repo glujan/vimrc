@@ -3,7 +3,7 @@ filetype off
 
 call plug#begin()
 " UI
-Plug 'tomasr/molokai'
+Plug 'NLKNguyen/papercolor-theme'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-airline/vim-airline'
 
@@ -55,7 +55,8 @@ inoremap <leader>, <C-x><C-o>
 "~~~~~~~~~~ View config ~~~~~~~~~~"
 
 " molokai theme
-colorscheme molokai
+colorscheme PaperColor
+set background=light
 set termguicolors
 
 " color 80th and 120+ rows
