@@ -10,6 +10,8 @@ Plug 'vim-airline/vim-airline'
 " Langs
 Plug 'python-mode/python-mode', {'for': 'python', 'branch': 'develop'}
 Plug 'fatih/vim-go', {'for': 'go', 'do': ':GoInstallBinaries'}
+Plug 'vim-ruby/vim-ruby', {'for': 'ruby'}
+Plug 'tpope/vim-rails', {'for': 'ruby'}
 
 " Tools
 Plug 'ambv/black', {'for': 'python'}
