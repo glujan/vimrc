@@ -1,0 +1,19 @@
+#!/bin/bash
+
+BASE_PATH=$(realpath ~/Develop)
+
+_repo_path() {
+    repo=$1
+    repo=${repo#https://}
+    repo=${repo#*@}
+    repo=${repo%.git}
+    repo=${repo/:/\/}
+    repo_path=$(dirname $repo)
+    echo "$BASE_PATH/$repo"
+}
+
+repo_path=$(_repo_path "${@: -1}")
+# shift
+
+echo "git clone $* ${repo_path}"
+git clone $* ${repo_path}

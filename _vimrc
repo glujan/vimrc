@@ -204,3 +204,8 @@ set smartindent
 set tabpagemax=50
 set foldlevelstart=1
 set wildmenu
+
+set foldmethod=indent
+set foldnestmax=10
+set nofoldenable
+set foldlevel=0
