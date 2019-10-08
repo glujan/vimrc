@@ -14,7 +14,8 @@ Plug 'vim-ruby/vim-ruby', {'for': 'ruby'}
 Plug 'tpope/vim-rails', {'for': 'ruby'}
 
 " Tools
-Plug 'ambv/black', {'for': 'python'}
+Plug 'psf/black', {'for': 'python'}
+Plug 'tpope/vim-bundler', {'for': 'ruby'}
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'lokikl/vim-ctrlp-ag'
 Plug 'scrooloose/nerdcommenter'
@@ -56,7 +57,6 @@ inoremap <leader>, <C-x><C-o>
 
 "~~~~~~~~~~ View config ~~~~~~~~~~"
 
-" molokai theme
 colorscheme PaperColor
 set background=light
 set termguicolors
@@ -73,12 +73,8 @@ if !exists('g:airline_symbols')
 endif
 
 set laststatus=2
-set noshowmode
+set noshowmode " get rid of mode message like --INSERT--
 
-let g:airline_left_sep='»'
-let g:airline_left_sep='▶'
-let g:airline_right_sep='«'
-let g:airline_right_sep='◀'
 let g:airline_symbols.linenr='␊'
 let g:airline_symbols.linenr='␤'
 let g:airline_symbols.linenr='¶'
@@ -86,7 +82,9 @@ let g:airline_symbols.branch='⎇'
 let g:airline_symbols.paste='ρ'
 let g:airline_symbols.paste='Þ'
 let g:airline_symbols.paste='∥'
+let g:airline_symbols.spell = 'Ꞩ'
 let g:airline_symbols.whitespace='Ξ'
+let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]'
 
 " nerdcommenter
 let NERDSpaceDelims=1
