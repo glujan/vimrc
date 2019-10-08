@@ -15,5 +15,4 @@ _repo_path() {
 repo_path=$(_repo_path "${@: -1}")
 # shift
 
-echo "git clone $* ${repo_path}"
 git clone $* ${repo_path}
