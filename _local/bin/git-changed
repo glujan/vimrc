@@ -5,4 +5,4 @@ if [ "$1" = "" ]; then
   exit
 fi
 
-git diff --name-only origin/master | grep "$1" | sort | uniq
+git diff --name-only origin/master --diff-filter=MAR | grep "$1" | sort | uniq
