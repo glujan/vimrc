@@ -1,6 +1,6 @@
 #!/bin/bash
 
-BASE_PATH=$(realpath ~/Develop)
+GIT_CLONE_PATH=${GIT_CLONE_PATH-~/Develop}
 
 _repo_path() {
     repo=$1
