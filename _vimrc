@@ -38,6 +38,7 @@ map <c-h> <c-w>h
 " navigate tabs
 map <Leader>n <esc>:tabprevious<CR>
 map <Leader>m <esc>:tabnext<CR>
+map <Leader>q <esc>:tabclose<CR>
 
 " sort selection alphabetically
 vnoremap <Leader>s :sort<CR>
