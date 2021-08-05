@@ -155,9 +155,6 @@ set nobackup
 set nowritebackup
 set noswapfile
 
-" enable CSS auto completion automatically
-autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-
 " encoding
 if v:ctype =~ "UTF-8"
 	set tenc=utf8
