@@ -8,11 +8,11 @@ Plug 'airblade/vim-gitgutter'
 Plug 'vim-airline/vim-airline'
 
 " Langs
-Plug 'python-mode/python-mode', {'for': 'python', 'branch': 'develop'}
+Plug 'davidhalter/jedi-vim', {'for': 'python'},
+Plug 'dense-analysis/ale', {'for': 'python'},
 Plug 'fatih/vim-go', {'for': 'go', 'do': ':GoInstallBinaries'}
 
 " Tools
-Plug 'psf/black', {'for': 'python'}
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'lokikl/vim-ctrlp-ag'
 Plug 'scrooloose/nerdcommenter'
@@ -102,43 +102,15 @@ set wildignore+=*/vendor/*
 nnoremap <c-f> :CtrlPag<cr>
 vnoremap <c-f> :CtrlPagVisual<cr>
 
-" python-mode
-let g:pymode_python = 'python3'
-let g:pymode_rope=1
-let g:pymode_rope_goto_definition_bind='<Leader>g'
-let g:pymode_rope_goto_definition_cmd="vnew"
+" jedi-vim
+let g:jedi#use_splits_not_buffers = "left"
+let g:jedi#show_call_signatures = "1"
 
-let g:pymode_syntax=1
-let g:pymode_syntax_all=1
-let g:pymode_lint_sort=['E', 'I', 'C']
-let g:pymode_virtualenv=1
-let g:pymode_breakpoint_cmd='import pudb; pudb.set_trace()  # XXX BREAKPOINT'
-let g:pymode_options_max_line_length=100
+map <Leader>b <esc>O__import__("pdb").set_trace()  # XXX BREAKPOINT<esc>
 
-" NeoVim
-let g:python3_host_prog = '~/.pyenv/versions/neovim/bin/python'
-let g:python_host_prog = '~/.pyenv/versions/neovim-py2/bin/python'
-
-" Black
-let g:black_virtualenv = '~/.pyenv/versions/black/'
-let g:black_linelength = 99
-" automatically run Black on save
-autocmd BufWritePre *.py execute ':Black'
-
-" OmniPopup
-set completeopt=longest,menuone
-function! OmniPopup(action)
-	if pumvisible()
-		if a:action == 'j'
-			return "\<C-N>"
-		elseif a:action == 'k'
-			return "\<C-P>"
-		endif
-	endif
-	return a:action
-endfunction
-inoremap <silent><C-j> <C-R>=OmniPopup('j')<CR>
-inoremap <silent><C-k> <C-R>=OmniPopup('k')<CR>
+let g:ale_fixers = {'*': ['remove_trailing_lines', 'trim_whitespace']}
+let g:ale_fixers.python = ['isort', 'black']
+let g:ale_fix_on_save = 1
 
 
 "~~~~~~~~~~ Miscellaneous ~~~~~~~~~~"
