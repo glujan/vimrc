@@ -9,7 +9,7 @@ Plug 'vim-airline/vim-airline'
 
 " Langs
 Plug 'davidhalter/jedi-vim', {'for': 'python'},
-Plug 'dense-analysis/ale', {'for': 'python'},
+Plug 'dense-analysis/ale'
 Plug 'fatih/vim-go', {'for': 'go', 'do': ':GoInstallBinaries'}
 
 " Tools
@@ -59,30 +59,50 @@ colorscheme PaperColor
 set background=light
 set termguicolors
 
-" color 80th and 120+ rows
+" color 100th and 120+ rows
 highlight ColorColumn ctermbg=235 guibg=#2c2d27
-let &colorcolumn="80,".join(range(100,999),",")
+let &colorcolumn="100,".join(range(120,999),",")
 
 "~~~~~~~~~~ Plugins config ~~~~~~~~~~"
 
 " airline
+if has('autocmd')
+  augroup airline_init
+    autocmd!
+    autocmd User AirlineAfterInit
+      \ call s:airline_init()
+  augroup END
+endif
+
+function! s:airline_init()
+  let g:airline_section_b = airline#section#create(['branch'])
+  let g:airline#extensions#default#section_truncate_width = {
+      \ 'b': 99,
+      \ 'x': 60,
+      \ 'y': 88,
+      \ 'z': 45,
+      \ 'warning': 80,
+      \ 'error': 80,
+      \ }
+    if airline#util#winwidth() > 79
+      let g:airline_section_z = airline#section#create(['windowswap', 'obsession', 'linenr', 'maxlinenr', 'colnr'])
+    else
+      let g:airline_section_z = airline#section#create(['linenr', 'colnr'])
+    endif
+endfunction
+
 if !exists('g:airline_symbols')
    let g:airline_symbols={}
 endif
 
 set laststatus=2
 set noshowmode " get rid of mode message like --INSERT--
-
-let g:airline_symbols.linenr='␊'
-let g:airline_symbols.linenr='␤'
-let g:airline_symbols.linenr='¶'
-let g:airline_symbols.branch='⎇'
-let g:airline_symbols.paste='ρ'
-let g:airline_symbols.paste='Þ'
-let g:airline_symbols.paste='∥'
-let g:airline_symbols.spell = 'Ꞩ'
-let g:airline_symbols.whitespace='Ξ'
+let g:airline_skip_empty_sections = 1
+let g:airline#extensions#branch#displayed_head_limit = 20
 let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]'
+let g:airline_symbols.branch='⎇ '
+let g:airline_symbols.spell = 'Ꞩ'
+let g:airline_symbols.maxlinenr = ''
 
 " nerdcommenter
 let NERDSpaceDelims=1
@@ -91,6 +111,7 @@ let NERDSpaceDelims=1
 let g:ctrlp_max_height=15
 let g:ctrlp_custom_ignore='node_modules\|\v[\/]\.(git|hg|svn|tox)$'
 let g:ctrlp_open_multiple_files='t'
+let g:ctrlp_extensions = ['autoignore']
 set wildignore+=*.pyc
 set wildignore+=*__pycache__/*
 set wildignore+=*build/*
@@ -107,12 +128,12 @@ vnoremap <c-f> :CtrlPagVisual<cr>
 let g:jedi#use_splits_not_buffers = "left"
 let g:jedi#show_call_signatures = "1"
 
-map <Leader>b <esc>O__import__("pdb").set_trace()  # XXX BREAKPOINT<esc>
+map <Leader>b <esc>Obreakpoint()  # XXX BREAKPOINT<esc>
 
 let g:ale_fixers = {'*': ['remove_trailing_lines', 'trim_whitespace']}
-let g:ale_fixers.python = ['isort', 'black']
+let g:ale_fixers.python = ['isort', 'autoflake']
 let g:ale_fix_on_save = 1
-
+let g:ale_linters = {'python': ['flake8', 'mypy', 'pyright', 'bandit']}
 
 "~~~~~~~~~~ Miscellaneous ~~~~~~~~~~"
 
