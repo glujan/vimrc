@@ -1,6 +1,8 @@
 set nocompatible
 filetype off
 
+let g:ale_completion_enabled = 1
+
 call plug#begin()
 " UI
 Plug 'NLKNguyen/papercolor-theme'
@@ -8,7 +10,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'vim-airline/vim-airline'
 
 " Langs
-Plug 'davidhalter/jedi-vim', {'for': 'python'},
+" Plug 'davidhalter/jedi-vim', {'for': 'python'},
 Plug 'dense-analysis/ale'
 Plug 'fatih/vim-go', {'for': 'go', 'do': ':GoInstallBinaries'}
 
@@ -19,6 +21,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb' "Gbrowse
 Plug 'majutsushi/tagbar' "depends on 'exuberant-ctags'
+Plug 'glujan/altpy.vim', {'for': 'python'}
 call plug#end()
 
 "~~~~~~~~~~ Key bindings ~~~~~~~~~~"
@@ -111,7 +114,7 @@ let NERDSpaceDelims=1
 let g:ctrlp_max_height=15
 let g:ctrlp_custom_ignore='node_modules\|\v[\/]\.(git|hg|svn|tox)$'
 let g:ctrlp_open_multiple_files='t'
-let g:ctrlp_extensions = ['autoignore']
+let g:ctrlp_extensions = ['autoignore', 'tag', 'buffertag', 'mixed']
 set wildignore+=*.pyc
 set wildignore+=*__pycache__/*
 set wildignore+=*build/*
@@ -125,15 +128,19 @@ nnoremap <c-f> :CtrlPag<cr>
 vnoremap <c-f> :CtrlPagVisual<cr>
 
 " jedi-vim
-let g:jedi#use_splits_not_buffers = "left"
-let g:jedi#show_call_signatures = "1"
+" let g:jedi#use_splits_not_buffers = "left"
+" let g:jedi#show_call_signatures = "1"
 
 map <Leader>b <esc>Obreakpoint()  # XXX BREAKPOINT<esc>
 
 let g:ale_fixers = {'*': ['remove_trailing_lines', 'trim_whitespace']}
-let g:ale_fixers.python = ['isort', 'autoflake']
+" let g:ale_fixers.python = ['isort'] ", 'black']
+let g:ale_fixers.python = ['isort', 'black']
 let g:ale_fix_on_save = 1
-let g:ale_linters = {'python': ['flake8', 'mypy', 'pyright', 'bandit']}
+let g:ale_linters = {'*': ['cspell'], 'python': ['flake8', 'cspell', 'pyright'], 'javascript': ['biome']}
+set omnifunc=ale#completion#OmniFunc
+let g:ale_use_global_executables = 1
+let g:ale_completion_enabled = 1
 
 "~~~~~~~~~~ Miscellaneous ~~~~~~~~~~"
 
